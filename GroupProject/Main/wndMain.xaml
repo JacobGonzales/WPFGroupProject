@@ -1,0 +1,51 @@
+﻿<Window x:Class="GroupProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GroupProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700">
+    <Grid Height="450" Margin="0,0,2,0">
+        <Menu Style="{StaticResource MenuStyle}">
+            <MenuItem Header="Search" Name="SearchHeader" Click="SearchHeader_Click">
+            </MenuItem>
+            <MenuItem Header="Items" Name="ItemsHeader" Click="ItemsHeader_Click">
+            </MenuItem>
+        </Menu>
+        <Button Name="btnAddInvoice" Click="btnAddInvoice_Click" Height="25" Width="100" Margin="83,55,497,370">Add Invoice</Button>
+        <Button Name ="btnEditInvoice" Click="btnEditInvoice_Click" IsEnabled="False" Height="25" Width="100" Margin="253,55,327,370">Edit Invoice</Button>
+        <Button Name="btnDeleteInvoice" Click="btnDeleteInvoice_Click" IsEnabled="False" Height="25" Width="100" Margin="421,55,159,370">Delete Invoice</Button>
+        <GroupBox Margin="0,106,30,10">
+            <GroupBox.Header>
+                <Label Name="lblInvoiceNum">Invoice</Label>
+            </GroupBox.Header>
+            <Grid Margin="0,0,0,0" Style="{StaticResource GridStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="119*"/>
+                    <ColumnDefinition Width="529*"/>
+                </Grid.ColumnDefinitions>
+                <Label Height="25" Width="80" Margin="56,29,512,247" IsEnabled="False" Name="lblDatePlaceHolder" Grid.ColumnSpan="2">Invoice Date:</Label>
+                <DatePicker Name="dpInvoiceDate" Width="150" Height="25" IsEnabled="False" SelectedDateChanged="dpInvoiceDate_SelectedDateChanged" Margin="23,30,356,246" Grid.Column="1" />
+                <Label Height="25" Width="80" Margin="56,70,512,206" IsEnabled="False" Name="lblTotalPlaceHolder" Grid.ColumnSpan="2">Total:</Label>
+                <Label Height="25" Width="80" Margin="23,70,426,206" IsEnabled="False" Name="lblTotalCost" Grid.Column="1"></Label>
+                <Label Height="25" Width="80" IsEnabled="False" Name="lblAddItemPlaceHolder" Margin="56,108,512,167" Grid.ColumnSpan="2">Add Item:</Label>
+                <ComboBox Height="25" Width="150" Margin="23,109,356,167" IsEnabled="False" Name="cbAddItem" SelectionChanged="cbAddItem_SelectionChanged" Grid.Column="1">
+                </ComboBox>
+                <Label Height="25" Width="80" IsEnabled="False" Name="lblItemCostPlaceHolder" Margin="56,152,512,124" Grid.ColumnSpan="2">Item Cost:</Label>
+                <Label Height="25" Width="100" IsEnabled="False" Name="lblItemCost" Margin="23,152,406,124" Grid.Column="1"></Label>
+                <DataGrid Width="250" IsEnabled="False" Margin="257,11,22,13" Name="dgInvoiceItems" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" Grid.Column="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Code" Binding="{Binding sItemCode}" Width="*"/>
+                        <DataGridTextColumn Header="Description"  Binding="{Binding sItemDesc}" Width="2*"/>
+                        <DataGridTextColumn Header="Cost"  Binding="{Binding sCost}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Name="btnSaveInvoice"  Height="25" Margin="27,235,486,41" Click="btnSaveInvoice_Click" RenderTransformOrigin="0.47,1.36" IsEnabled="False" Grid.ColumnSpan="2">Save Invoice</Button>
+                <Button Name="btnCancel" Height="25" Click="btnCancel_Click" Margin="79,235,314,41" IsEnabled="False" Grid.Column="1">Cancel</Button>
+                <Button Name="btnAddItem" Height="25" Click="btnAddItem_Click" Margin="27,194,486,82" IsEnabled="False" Grid.ColumnSpan="2">Add Item</Button>
+                <Button Name="btnRemoveItem" Height="25" IsEnabled="False" Margin="79,194,314,82" Click="btnRemoveItem_Click" Grid.Column="1">Remove Item</Button>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

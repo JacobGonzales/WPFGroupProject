@@ -1,0 +1,39 @@
+﻿<Window x:Class="GroupProject.Items.wndItems"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GroupProject.Items"
+        mc:Ignorable="d"
+        Title="wndItems" Height="450" Width="800">
+    <Grid Style="{StaticResource GridStyle}">
+        <DataGrid Margin="10,11,387.6,13" Name="dgLineItems" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="dgLineItems_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Code" Binding="{Binding sItemCode}" Width="*"/>
+                <DataGridTextColumn Header="Description"  Binding="{Binding sItemDesc}" Width="2*"/>
+                <DataGridTextColumn Header="Cost"  Binding="{Binding sCost}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblTitleItemDescription" Content="Item Description:" HorizontalAlignment="Left" Margin="421,35,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="122"/>
+        <Label x:Name="lblTitleCost" Content="Cost:" HorizontalAlignment="Left" Margin="421,54,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="44"/>
+        <Label x:Name="lblTitleItemCode" Content="Item Code:" HorizontalAlignment="Left" Margin="421,13,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="82"/>
+        <TextBox x:Name="txtEditItemDescription" HorizontalAlignment="Left" Height="28" Margin="587,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <TextBox x:Name="txtEditCost" HorizontalAlignment="Left" Height="27" Margin="587,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="638,206,0,0" VerticalAlignment="Top" Width="86" Click="btnEdit_Click" Height="23"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="640,85,0,0" VerticalAlignment="Top" Width="84" Click="btnDelete_Click" Height="24"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="640,368,0,0" VerticalAlignment="Top" Width="85" Click="btnAdd_Click" Height="23"/>
+        <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" Margin="541,304,0,0" VerticalAlignment="Top" Height="32" Width="11"/>
+        <Label x:Name="lblTxtEditItemDesc" Content="Edit Item Description:" HorizontalAlignment="Left" Margin="427,121,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="153"/>
+        <Label x:Name="lblEditTxtCost" Content="Edit Cost:" HorizontalAlignment="Left" Margin="427,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.635,0.371" FontWeight="Bold" Height="31" Width="80"/>
+        <Label x:Name="lblItemCode" Content="N/A" HorizontalAlignment="Left" Margin="536,12,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="181"/>
+        <Label x:Name="lblItemDesc" Content="N/A" HorizontalAlignment="Left" Margin="536,33,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="32" Width="184"/>
+        <Label x:Name="lblCost" Content="N/A" HorizontalAlignment="Left" Margin="536,54,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="184"/>
+        <TextBox x:Name="txtNewItemDescription" HorizontalAlignment="Left" Height="28" Margin="587,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <TextBox x:Name="txtNewCost" HorizontalAlignment="Left" Height="27" Margin="587,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <Label x:Name="lblTxtNewItemDesc" Content="New Item Description:" HorizontalAlignment="Left" Margin="429,280,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="153"/>
+        <Label x:Name="lblNewTxtCost" Content="New Cost:" HorizontalAlignment="Left" Margin="429,318,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.635,0.371" FontWeight="Bold" Height="31" Width="80"/>
+        <Label x:Name="lblTxtNewItemCode" Content="New Item Code:" HorizontalAlignment="Left" Margin="429,244,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="31" Width="153"/>
+        <TextBox x:Name="txtNewItemCode" HorizontalAlignment="Left" Height="28" Margin="587,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+
+    </Grid>
+</Window>
